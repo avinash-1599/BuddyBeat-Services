@@ -4,7 +4,7 @@ import appStore from './utils/appStore';
 import Services from './components/Services';
 import CreateAppointment from './components/CreateAppointment';
 import RegisterArtist from './components/RegisterArtist';
-import ArtistPanel from './components/artistPanel';
+import ArtistPanel from './components/ArtistPanel';
 
 
 export default function App() {
