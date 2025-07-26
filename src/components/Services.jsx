@@ -33,7 +33,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen pt-20 pb-20">
+    <div className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 text-white min-h-screen pt-20 pb-20">
       {/* Fixed NavBar */}
       <div className="fixed top-0 left-0 w-full z-50">
         <NavBar />
