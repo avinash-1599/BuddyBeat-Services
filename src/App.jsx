@@ -5,6 +5,7 @@ import Services from './components/Services';
 import CreateAppointment from './components/CreateAppointment';
 import RegisterArtist from './components/RegisterArtist';
 import ArtistPanel from './components/ArtistPanel';
+import TattooService from './components/TattooService';
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path='register-artist' element={<RegisterArtist></RegisterArtist>}></Route>
         </Route>
         <Route path='artist-panel/:artistContact' element={<ArtistPanel />} />
+        <Route path='tattoo-services' element={<TattooService></TattooService>}></Route>
       </Routes>
     </BrowserRouter>
     </Provider>
