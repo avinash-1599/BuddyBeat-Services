@@ -7,7 +7,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom"; // Assuming
 const TattooService = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const showModal = location.pathname === "/tattoo-services/book-appointment" || location.pathname === "/tattoo-services/register-artist";
+  const showModal = location.pathname === "/book-appointment" || location.pathname === "/register-artist";
 
   return (
     <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
@@ -30,13 +30,13 @@ const TattooService = () => {
 
           {/* Book Appointment Button */}
           <button
-            onClick={() => navigate("/tattoo-services/book-appointment")}
+            onClick={() => navigate("/book-appointment")}
             className="mt-6 px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 text-white font-semibold text-sm md:text-base rounded-full shadow-md hover:scale-105 transition-all"
           >
             Book Appointment
           </button>
           <button
-            onClick={() => navigate("/tattoo-services/register-artist")}
+            onClick={() => navigate("/register-artist")}
             className="mt-6 ml-3 px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 text-white font-semibold text-sm md:text-base rounded-full shadow-md hover:scale-105 transition-all"
             >
             Register as Tattoo Artist

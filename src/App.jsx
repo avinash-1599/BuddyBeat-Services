@@ -17,7 +17,6 @@ export default function App() {
     <BrowserRouter basename="/">
       <Routes>
         <Route path='/' element={<Services></Services>}></Route>
-        <Route path='artist-panel/:artistContact' element={<ArtistPanel />} />
         <Route path='tattoo-services' element={<TattooService></TattooService>}>
           <Route path='book-appointment' element={<CreateAppointment></CreateAppointment>}></Route>
           <Route path='register-artist' element={<RegisterArtist></RegisterArtist>}></Route>
