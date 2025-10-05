@@ -89,7 +89,7 @@ const NavBar = () => {
           >
             <button className="flex items-center space-x-2 focus:outline-none">
               <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-300">
-                <img src={user.photoUrl} alt="user photo" className="w-full h-full object-cover" />
+                <img src={user?.photoUrl || ''} alt="user photo" className="w-full h-full object-cover" />
               </div>
             </button>
             {showProfileDropdown && (
