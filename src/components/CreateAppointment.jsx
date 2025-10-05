@@ -75,7 +75,7 @@ const CreateAppointment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-        const sessionId = SHA256(form.artistContact).toString();
+        const sessionId = SHA256(form.artistContact + form.contactNumber + Date.now()).toString();
         setSessionId(sessionId);
         form.sessionId = sessionId;
         if (!form.userName || !form.contactNumber || !form.tattooDesignUrl || !form.size || !form.location || !form.date) {

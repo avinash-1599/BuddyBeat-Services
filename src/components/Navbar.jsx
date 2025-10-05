@@ -1,9 +1,31 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { BASE_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { setUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const { data } = await axios.get(`${BASE_URL}/profile/view`, { withCredentials: true });
+        console.log("Logged in user:", data);
+        dispatch(setUser(data.data));
+      } catch (err) {
+        console.log("Not logged in");
+        // redirect to main login page
+        window.location.href =
+          "https://www.buddybeat.co.in/login?redirect=https://services.buddybeat.co.in";
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   return (
     <nav className="bg-gray-800 text-white flex items-center justify-between px-6 py-3 shadow-md z-50 relative">
