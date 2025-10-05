@@ -35,7 +35,9 @@ const NavBar = () => {
     try {
       await axios.post(`${BASE_URL}/logout`, {}, { withCredentials: true });
       dispatch(removeUser());
-      navigate(`${FRONTEND_URL}/login`);
+      setTimeout(() => {
+        window.location.href = `${FRONTEND_URL}/login?redirect=${FRONTEND_SERVICES_URL}`;
+      }, 300);
     } catch (err) {
       console.error("Error logging out", err);
     }
