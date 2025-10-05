@@ -11,7 +11,8 @@ const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
-  const user = useSelector((store) => store.user.userInfo);
+  const user = useSelector((store) => store.user?.userInfo);
+  console.log("User in NavBar:", user);
 
   useEffect(() => {
     const fetchUser = async () => {
