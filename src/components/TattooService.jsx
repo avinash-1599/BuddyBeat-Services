@@ -7,6 +7,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom"; // Assuming
 const TattooService = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  console.log("location:", location.pathname);
   const showModal = location.pathname === "/book-appointment" || location.pathname === "/register-artist";
 
   return (
