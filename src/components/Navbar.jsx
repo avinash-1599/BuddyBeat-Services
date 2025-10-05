@@ -2,13 +2,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
-import { useDispatch } from "react-redux";
-import { setUser } from "../utils/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser, setUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+
+  const user = useSelector((store) => store.user.userInfo);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -26,6 +29,16 @@ const NavBar = () => {
 
     fetchUser();
   }, []);
+
+  const handleLogout = async () => {
+    try {
+      await axios.post(`${BASE_URL}/logout`, {}, { withCredentials: true });
+      dispatch(removeUser());
+      navigate(`${BASE_URL}/login`);
+    } catch (err) {
+      console.error("Error logging out", err);
+    }
+  }
 
   return (
     <nav className="bg-gray-800 text-white flex items-center justify-between px-6 py-3 shadow-md z-50 relative">
@@ -67,6 +80,22 @@ const NavBar = () => {
             <Link to={"/faqs"} className="hover:text-gray-300 transition">
               FAQs
             </Link>
+          </li>
+          <li
+            className="relative"
+            onMouseEnter={() => setShowProfileDropdown(true)}
+            onMouseLeave={() => setShowProfileDropdown(false)}
+          >
+            <button className="flex items-center space-x-2 focus:outline-none">
+              <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-300">
+                <img src={user.photoUrl} alt="user photo" className="w-full h-full object-cover" />
+              </div>
+            </button>
+            {showProfileDropdown && (
+              <ul className="absolute top-full left-0 bg-white text-black shadow-md rounded w-48 p-1 space-y-1 z-50">
+                <li className="hover:bg-gray-100 p-1 cursor-pointer" onClick={handleLogout}>Log Out</li>
+              </ul>
+            )}
           </li>
         </ul>
       </div>
