@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL, FRONTEND_SERVICES_URL, FRONTEND_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser, setUser } from "../utils/userSlice";
 
@@ -24,7 +24,7 @@ const NavBar = () => {
         console.log("Not logged in");
         // redirect to main login page
         window.location.href =
-          "https://www.buddybeat.co.in/login?redirect=https://services.buddybeat.co.in";
+          `${FRONTEND_URL}/login?redirect=${FRONTEND_SERVICES_URL}`;
       }
     };
 
@@ -35,7 +35,7 @@ const NavBar = () => {
     try {
       await axios.post(`${BASE_URL}/logout`, {}, { withCredentials: true });
       dispatch(removeUser());
-      navigate(`${BASE_URL}/login`);
+      navigate(`${FRONTEND_URL}/login`);
     } catch (err) {
       console.error("Error logging out", err);
     }
