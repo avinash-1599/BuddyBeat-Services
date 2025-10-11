@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL, FRONTEND_SERVICES_URL, FRONTEND_URL } from "../utils/constants";
+import { BASE_URL, FRONTEND_SERVICES_URL, FRONTEND_URL } from "../utils/constant";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser, setUser } from "../utils/userSlice";
 

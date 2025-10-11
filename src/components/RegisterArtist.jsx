@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../utils/constant";
 import { useNavigate } from "react-router-dom";
 
 const RegisterArtist = () => {

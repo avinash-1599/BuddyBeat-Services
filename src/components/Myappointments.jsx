@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { BASE_URL } from "../utils/constants";
+import { BASE_URL } from "../utils/constant";
 
 console.log("BASE_URL:", BASE_URL);
 
