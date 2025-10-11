@@ -8,7 +8,7 @@ import ArtistPanel from './components/ArtistPanel';
 import TattooService from './components/TattooService';
 import About from './components/About';
 import Faqs from './components/Faqs';
-import MyAppointments from './components/Myappointments';
+import MyAppointments from './components/MyAppointments';
 
 
 export default function App() {
