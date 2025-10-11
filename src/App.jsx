@@ -8,6 +8,7 @@ import ArtistPanel from './components/ArtistPanel';
 import TattooService from './components/TattooService';
 import About from './components/About';
 import Faqs from './components/Faqs';
+import MyAppointments from './components/Myappointments';
 
 
 export default function App() {
@@ -20,7 +21,7 @@ export default function App() {
         <Route path='tattoo-services' element={<TattooService></TattooService>}>
           <Route path='book-appointment' element={<CreateAppointment></CreateAppointment>}></Route>
           <Route path='register-artist' element={<RegisterArtist></RegisterArtist>}></Route>
-          <Route path='myappointments' element={<Myappointments></Myappointments>}></Route>
+          <Route path='myappointments' element={<MyAppointments></MyAppointments>}></Route>
         </Route>
         <Route path='artist-panel/:artistContact' element={<ArtistPanel />} />
         <Route path='about' element={<About></About>}></Route>
