@@ -64,7 +64,7 @@ const NavBar = () => {
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
           >
-            <button className="hover:text-gray-300 transition">Services</button>
+            <button className="hover:text-gray-300 transition pt-4">Services</button>
             {showDropdown && (
               <ul className="absolute top-full left-0 bg-white text-black shadow-md rounded w-48 p-1 space-y-1 z-50">
                 <li className="hover:bg-gray-100 p-1 cursor-pointer" onClick={() => navigate('/tattoo-services')}>Tattoo Appointment</li>
@@ -75,12 +75,12 @@ const NavBar = () => {
             )}
           </li>
           <li>
-            <Link to={"/about"} className="hover:text-gray-300 transition">
+            <Link to={"/about"} className="hover:text-gray-300 transition pt-4">
               About Us
             </Link>
           </li>
           <li>
-            <Link to={"/faqs"} className="hover:text-gray-300 transition">
+            <Link to={"/faqs"} className="hover:text-gray-300 transition pt-4">
               FAQs
             </Link>
           </li>

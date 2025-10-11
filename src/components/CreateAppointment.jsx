@@ -9,7 +9,7 @@ import { createSocketConnection } from "../utils/socket";
 const socket = createSocketConnection();
 
 const CreateAppointment = () => {
-  const [form, setForm] = useState({ userName: "", contactNumber: "", tattooDesignUrl: "", size: "", location: "", state: "", city: "", artistContact: "", date: "" });
+  const [form, setForm] = useState({ contactNumber: "", tattooDesignUrl: "", size: "", location: "", state: "", city: "", artistContact: "", date: "" });
 
   const [ sessionId, setSessionId] = useState(null);
 
@@ -205,7 +205,7 @@ const CreateAppointment = () => {
             <option value="" disabled hidden>-- Choose an artist --</option>
             {artists.map((artist) => (
             <option key={artist.contact} value={artist.contact}>
-                {artist.name} ({artist.contact})
+                {artist.userId.firstName} {artist.userId.lastName} ({artist.contact})
             </option>
             ))}
         </select>
