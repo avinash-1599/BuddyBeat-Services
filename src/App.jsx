@@ -22,8 +22,8 @@ export default function App() {
         <Route path='tattoo-services' element={<TattooService></TattooService>}>
           <Route path='book-appointment' element={<CreateAppointment></CreateAppointment>}></Route>
           <Route path='register-artist' element={<RegisterArtist></RegisterArtist>}></Route>
-          <Route path='myappointments' element={<MyAppointments></MyAppointments>}></Route>
         </Route>
+        <Route path='myappointments' element={<MyAppointments></MyAppointments>}></Route>
         <Route path='artist-panel/:artistContact' element={<ArtistPanel />} />
         <Route path='about' element={<About></About>}></Route>
         <Route path='faqs' element={<Faqs></Faqs>}></Route>
