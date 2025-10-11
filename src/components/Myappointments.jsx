@@ -13,6 +13,7 @@ const MyAppointments = () => {
   const fetchAppointments = async () => {
     try {
       const data = await axios.get(`${BASE_URL}/artist/isArtist/${userId}`, { withCredentials: true });
+      console.log("User artist status:", data.data);
       let appointment_url;
       if (data.data.isArtist) {
         appointment_url = `${BASE_URL}/appointments/artist/${userId}`;
@@ -24,7 +25,7 @@ const MyAppointments = () => {
       console.log("Fetched appointments:", response.data);
       setAppointments(response.data);
     } catch (err) {
-      console.error("Error fetching appointments:", err);
+      console.error("Error fetching appointments:-", err);
     } finally {
       setLoading(false);
     }
