@@ -16,12 +16,12 @@ const MyAppointments = () => {
       console.log("User artist status:", data.data);
       let appointment_url;
       if (data.data.isArtist) {
-        appointment_url = `${BASE_URL}/appointments/artist/${userId}`;
+        appointment_url = `/appointments/artist/${userId}`;
       } else {
-        appointment_url = `${BASE_URL}/appointments/user/${userId}`;
+        appointment_url = `/appointments/user/${userId}`;
       }
 
-      const response = await axios.get(appointment_url, { withCredentials: true });
+      const response = await axios.get(`${BASE_URL}`+appointment_url, { withCredentials: true });
       console.log("Fetched appointments:", response.data);
       setAppointments(response.data);
     } catch (err) {
